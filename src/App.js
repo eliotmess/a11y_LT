@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
+const LinkBtn = styled.button`
+  font-family: 'Roboto Mono', monospace;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin: 30px 15px; 
+  border: 2px solid #444;
+  background: none;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LinkWrapper>
+      <Link to="/accessible">
+        <LinkBtn>Accessible</LinkBtn>
+      </Link>
+      <Link to="/inaccessible">
+        <LinkBtn>Inaccessible</LinkBtn>
+      </Link>
+    </LinkWrapper>
   );
 }
 
